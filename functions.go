@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func Hex(s string) string {
+func hex(s string) string {
 	decimal, err := strconv.ParseInt(s, 16, 64)
 
 	if err != nil {
@@ -15,7 +15,7 @@ func Hex(s string) string {
 	return strconv.Itoa(int(decimal))
 }
 
-func Bin(s string) string {
+func bin(s string) string {
 	decimal, err := strconv.ParseInt(s, 2, 64)
 
 	if err != nil {
@@ -25,15 +25,15 @@ func Bin(s string) string {
 	return strconv.Itoa(int(decimal))
 }
 
-func Up(s string) string {
+func up(s string) string {
 	return strings.ToUpper(s)
 }
 
-func Low(s string) string {
+func low(s string) string {
 	return strings.ToLower(s)
 }
 
-func Cap(s string) string {
+func cap(s string) string {
 	var builder strings.Builder
 	runes := []rune(s)
 
