@@ -6,6 +6,9 @@ import (
 	"unicode"
 )
 
+// hex function convert a string in hexadecimal to decimal
+// return the decimal as a string
+// if the string is not a valid hexadecimal, return the string as it is
 func hex(s string) string {
 	decimal, err := strconv.ParseInt(s, 16, 64)
 
@@ -16,6 +19,9 @@ func hex(s string) string {
 	return strconv.Itoa(int(decimal))
 }
 
+// bin function convert a string in binary to decimal
+// return the decimal as a string
+// if the string is not a valid binary, return the string as it is
 func bin(s string) string {
 	decimal, err := strconv.ParseInt(s, 2, 64)
 
@@ -26,14 +32,20 @@ func bin(s string) string {
 	return strconv.Itoa(int(decimal))
 }
 
+// up function convert a string to uppercase
+// return the uppercase as a string
 func up(s string) string {
 	return strings.ToUpper(s)
 }
 
+// low function convert a string to lowercase
+// return the lowercase as a string
 func low(s string) string {
 	return strings.ToLower(s)
 }
 
+// cap function convert a string to capitalize
+// return the capitalize as a string
 func cap(s string) string {
 	var builder strings.Builder
 	runes := []rune(s)
@@ -51,6 +63,8 @@ func cap(s string) string {
 	return builder.String()
 }
 
+// isPunc function check if a string is a punctuation
+// return true if the string is a punctuation, false otherwise
 func isPunc(s string) bool {
 	for _, r := range s {
 		if !unicode.IsPunct(r) {
@@ -61,6 +75,10 @@ func isPunc(s string) bool {
 	return true
 }
 
+// join function create a string from a slice of strings
+// return the string with spaces between words
+// if the string is a punctuation, it is not separated by spaces
+// if the string is a quote, it is not separated by spaces
 func join(slice []string) string {
 	var builder strings.Builder
 
