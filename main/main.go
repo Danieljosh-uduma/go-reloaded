@@ -22,4 +22,5 @@ func main() {
 
 	formatter.WriteFile(output, editedText)
 	fmt.Println(editedText)
+
 }
