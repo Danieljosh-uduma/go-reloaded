@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	"formatter"
+	"formatter/engine"
 )
 
 func main() {
 	// Get the input and output file names
-	input, output, err := formatter.GetFileNames()
+	input, output, err := engine.GetFileNames()
 
 	if err != nil {
 		fmt.Println(err)
@@ -15,15 +15,15 @@ func main() {
 	}
 
 	// read input file
-	text, err := formatter.ReadFile(input)
+	text, err := engine.ReadFile(input)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 
 	// process the text and return a formatted text
-	editedText := formatter.ProcessText(text)
+	editedText := engine.ProcessText(text)
 
 	// write the formatted text to the output file
-	formatter.WriteFile(output, editedText)
+	engine.WriteFile(output, editedText)
 }
